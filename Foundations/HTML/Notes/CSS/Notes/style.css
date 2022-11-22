@@ -1,0 +1,29 @@
+* {
+    border: red 2px solid;
+    padding: 0;
+    margin: 0;
+    font-size: 40px;
+}
+
+#box1 {
+    background-color: green;
+    padding: 20px;
+    border: 20px purple solid;
+    margin: 20px;
+    height: 100px;
+    width: 100px;
+}
+
+#box2 {
+    background-color: blue;
+}
+
+#box3 {
+    background-color: green;
+    padding: 20px;
+    border: 20px purple solid;
+    margin: 20px;
+    box-sizing: border-box; /*Makes height and width include padding and border of element*/
+    height: 100px;
+    width: 100px;
+}
