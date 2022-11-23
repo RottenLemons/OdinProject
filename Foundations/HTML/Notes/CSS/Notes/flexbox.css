@@ -16,7 +16,7 @@
     width: 900px;
     display: flex;
     padding: 10px 0px;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .signup {
@@ -75,6 +75,7 @@
 .footer {
     display: flex;
     justify-content: space-between;
+    gap: 5px;
 }
 
 .footer-item {
@@ -90,4 +91,6 @@
   flex: initial;
   width: 300px;
 }
+
+/* ^ https://www.internetingishard.com/html-and-css/flexbox/ ^ */
 
