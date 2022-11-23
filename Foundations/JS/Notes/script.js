@@ -53,6 +53,18 @@ twoDecimalPlaces;
 let balls = "74";
 balls = Number(balls) + 3;
 
-// Converts non-numbers
+// Converts non-numbers, unary + acts like Number()
 alert( +true ); // 1
 alert( +"" );   // 0
+alert( +"2" + +"3" );
+
+// = returns the value at the left of it, thus chaining is possible
+let a;
+let b;
+a = b = 2; // First b=2, which returns 2, thus a = 2
+let c = (1 + 2, 3 + 4); // c = 7: First expression is evaluated, but 3 is thrown. Only return of last expression is not thrown
+// = occurs before ,
+
+// null + 1, null becomes 0 after the numeric conversion thus 1
+// undefined + 1, undefined becomes NaN after the numeric conversion thus NaN
+// " \t \n" - 2, space characters are trimmed off string start and end when a string is converted to a number thus -2
