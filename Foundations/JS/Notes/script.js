@@ -187,3 +187,30 @@ ask(
 
 // https://javascript.info/arrow-functions
 
+function defer(f, ms) {
+  return function() {
+    setTimeout(() => f.apply(this, arguments), ms);
+  };
+}
+
+function sayHi(who) {
+  alert('Hello, ' + who);
+}
+
+let sayHiDeferred = defer(sayHi, 2000);
+sayHiDeferred("John"); 
+
+// Explanation:
+
+function test(){
+    console.log(this); // Window, or this of the function
+    console.log(arguments); // Arguments of test
+}
+
+test('a', 'b'); // Will log Window and ['a', 'b']
+
+// So defer(sayHi, 2000); returns this function 
+function sayHiDeferred () {
+    setTimeout(() => sayHi(arguments), 2000);
+  };
+// sayHiDeferred("John") -> sayHi("John"), sayHiDeferred("John",{},[],"asdasd") -> sayHi("John",{},[],"asdasd")
