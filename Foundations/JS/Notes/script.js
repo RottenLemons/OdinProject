@@ -105,3 +105,42 @@ const areEqual = (str1, str2, locale = "en-US") =>
   str1.localeCompare(str2, locale, { sensitivity: "accent" }) === 0; // For string comparison
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+
+let result = value1 || value2 || value3; // OR goes through from left to right and convert values to boolean. When the first True is found, the original value is returned, or the last if none are found
+// e.g. ("" || "" || "Super" || "Anoynomous") // Super is returned
+
+result = value1 && value2 && value3; // AND goes through from left to right and convert values to boolean. When the first False is found, the original value is returned, or the last if none are found
+// e.g. (1 && 2 && null && 3) // null is returned
+
+let result2 = condition ? value1 : value2;
+
+// Only NaN, false, undefined, 0, null, '' return false
+
+switch (expression) {
+  case choice1:
+    alert(1);
+    break;
+
+  case choice2:
+    alert(2);
+    break;
+
+  // include as many cases as you like
+
+  default:
+    alert(3);
+}
+
+console.assert(1 == 1, 'ouch'); // Only shows error if assertion is wrong
+
+console.log(document.querySelector('p')); // Shows element
+console.dir(document.querySelector('p')); // Shows classlist, children, style and other propeties and methods
+
+console.group(); // groupCollapsed()
+console.log('Hello');
+console.log('World');
+console.groupEnd();
+
+console.count('Hello')
+console.count('Hello')
+console.count('World')
