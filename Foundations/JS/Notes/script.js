@@ -68,3 +68,40 @@ let c = (1 + 2, 3 + 4); // c = 7: First expression is evaluated, but 3 is thrown
 // null + 1, null becomes 0 after the numeric conversion thus 1
 // undefined + 1, undefined becomes NaN after the numeric conversion thus NaN
 // " \t \n" - 2, space characters are trimmed off string start and end when a string is converted to a number thus -2
+
+alert( `the result is ${1 + 2}` ); // Only with ``
+
+const output = `I like the song.
+I gave it a score of 90%.`;
+console.log(output);
+
+/*
+I like the song.
+I gave it a score of 90%.
+For '', use \n
+*/
+
+let text = "Apple, Banana, Kiwi";
+let part = text.slice(7, 13); // Banana
+// substring() is the same, but -ve values are treated as 0
+// substr() is the same, but the second argument is the length of the slice
+
+let text1 = "Please eat candy!";
+let newText = text1.replace("candy", "apples");
+// To replace all matches, use a regular expression with a /g flag (global match)
+// text.replace(/Microsoft/g, "W3Schools"); or replaceAll()
+// If the parameter is a regular expression, the global flag (g) must be set set, otherwise a TypeError is thrown.
+
+let text2 = "5";
+let padded = text2.padEnd(4,"0"); // 50000
+// There is also a padStart
+
+let text3 = "HELLO WORLD";
+text3[0] = "A";    // Gives no error, but does not work, it is read only
+// use charAt as if no character is found, it returns an empty string
+text3.split(" ") // ['HELLO', 'WORLD']
+
+const areEqual = (str1, str2, locale = "en-US") =>
+  str1.localeCompare(str2, locale, { sensitivity: "accent" }) === 0; // For string comparison
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
