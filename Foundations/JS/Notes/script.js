@@ -141,6 +141,49 @@ console.log('Hello');
 console.log('World');
 console.groupEnd();
 
-console.count('Hello')
-console.count('Hello')
-console.count('World')
+console.count('Hello');
+console.count('Hello');
+console.count('World');
+
+a ?? b; // Gets the first defined value, if a is not null or undefined, it will return a, if not, b
+// Similar to || but || returns the first truthy value, ?? returns the first defined
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label 
+
+let sayHi = function() {
+  alert( "Hello" );
+};
+
+let func = sayHi; // sayHi() and func() does the same thing now
+
+
+
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+function showOk() {
+  alert( "You agreed." );
+}
+
+function showCancel() {
+  alert( "You canceled the execution." );
+}
+
+// usage: functions showOk, showCancel are passed as arguments to ask
+ask("Do you agree?", showOk, showCancel); // showOk and showCancel are call back functions
+
+ask(
+  "Do you agree?",
+  function() { alert("You agreed."); },
+  function() { alert("You canceled the execution."); }
+); // Does the same as above, but with anoynomous functions
+
+// Function Expressions are created when the execution reaches them.
+// A Function Declaration can be called earlier than it is defined, as they are created before any code is executed
+// In strict mode, when a Function Declaration is within a code block, it’s visible everywhere inside that block. But not outside of it.
+// But for Function Expressions, if the variable is declared earlier outside the block, then one can run the Functon Expression outside the block
+
+// https://javascript.info/arrow-functions
+
