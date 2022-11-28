@@ -214,3 +214,49 @@ function sayHiDeferred () {
     setTimeout(() => sayHi(arguments), 2000);
   };
 // sayHiDeferred("John") -> sayHi("John"), sayHiDeferred("John",{},[],"asdasd") -> sayHi("John",{},[],"asdasd")
+
+let h = ['Big', 'City', 'Balls'];
+h.indexOf('Big') // Returns index, if not in list, -1
+const person = {firstName:"John", lastName:"Doe", age:46};  // Array is an object, but uses numbers to access while objects use namse
+person.firstName; // John
+h.sort(); // Sorts array
+h.forEach(function (val) {
+  console.log(val);
+});
+h.push("Lemon"); // Push array element at the back
+h.pop(); // Remove last element
+h.shift() // Removes the first element, and shifts everything forward; returns the removed item
+h.unshift("Lemon"); // Adds element at the font and shifts everything back; returns new array length
+h.toString(); // Converts array to string
+h.join(" "); // Converts to string, but with a separator
+h.concat(h); // Concats multiple list; can take multiple arguments
+h.splice(2, 2, "Lemon", "Kiwi"); // The splice() method can be used to add new items to an array
+// The first parameter (2) defines the position where new elements should be added (spliced in)
+// The second parameter (0) defines how many elements should be removed
+// The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added; returns an array with the deleted items
+h.splice(0, 1); // Can be used to delete
+// Note JS can have holes where by deleting, it does not shift the array, but just makes the value undefine
+// h[1000] = 'Balls'; is allowed but will leave a lot of holes
+h.slice(3, 5) // Basically JS version of h[3:5]
+
+for (const items of h) {
+  console.log(items); // For of loop
+}
+
+function toUpper(string) {
+  return string.toUpperCase();
+}
+
+const upperH = h.map(toUpper); // You can use map() to do something to each item in a collection and create a new collection containing the changed items
+function lItem(item) {
+  return item.startsWith('L');
+}
+const filtered = h.filter(lItem); // Filters based on a condition specified by the function; Function must return true or false
+
+for (let i = 0; i < 10; i++) {
+
+  // if true, skip the remaining part of the body
+  if (i % 2 == 0) continue;
+
+  alert(i); // 1, then 3, 5, 7, 9
+} // This is better than printing if odd
