@@ -273,3 +273,65 @@ outer: for (let i = 0; i < 3; i++) {
     // do something with the value...
   }
 }
+
+let us = {
+  name: 'John', 
+  age: 30,}; // can have a trailing comma 
+us.isAdmin = true;
+delete us.age;
+us['name'];
+us.name; // Does the same thing
+
+let key = "isAdmin";
+user[key] = true; // Works
+// Thus allows us to do:
+key = prompt("What do you want to know about the user?", "name"); // name is default
+alert( user[key] );
+
+let fruit = prompt("Which fruit to buy?", "apple");
+
+let bag = {
+  [fruit]: 5, // the name of the property is taken from the variable fruit
+};
+
+alert( bag.apple ); // 5 if fruit="apple"
+
+function makeUser(name, age) {
+  return {
+    name, // same as name: name in functions
+    age,  // same as age: age
+    // ...
+  };
+}
+
+"key" in object; // true if object.key exists
+user.noSuchProperty === undefined; // also works, but will also be true when we set a key to undefined but it exists
+
+for (let key in us) {
+  alert(key);
+} //  keys that are integer properties are sorted, others appear in creation order. 
+// The “integer property” term here means a string that can be converted to-and-from an integer without a change. "49" is but not "+49", "1.2"
+
+const bob = {
+  name: ["Bob", "Smith"],
+  age: 32,
+  bio: function () {
+    console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.`);
+  },
+  introduceSelf() {
+    console.log(`Hi! I'm ${this.name[0]}.`);
+  }, // both bio and introduceSelf works
+};
+
+person.farewell = function () {
+  console.log("Bye everybody!");
+};
+
+function Person(name) {
+  this.name = name;
+  this.introduceSelf = function () {
+    console.log(`Hi! I'm ${this.name}.`);
+  };
+} // Constructor in JS
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
